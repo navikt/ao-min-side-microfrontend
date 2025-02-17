@@ -34,14 +34,13 @@ jobs:
       - name: "Build application"
         run: "npm run build"
 
-#      - id: cdn-upload
-#        uses: nais/deploy/actions/cdn-upload/v2@master
-#        with:
-#          team: mitt-team-navn
-#          source: ./dist/
-#          destination: "tms-microfrontend-template"
-#          destination: ${{ env.REPOSITORY_NAME }}
-#          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+      - id: cdn-upload
+        uses: nais/deploy/actions/cdn-upload/v2@master
+        with:
+          team: mitt-team-navn
+          source: ./dist/
+          destination: ${{ env.REPOSITORY_NAME }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
 
       - name: "Extract manifest url"
@@ -51,23 +50,23 @@ jobs:
           first_file=$(echo $files | cut -d',' -f1)
           echo "upload_url=https://cdn.nav.no/$first_file" >> $GITHUB_OUTPUT
 
-#  update-manifest-dev-gcp:
-#    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
-#    needs: build
-#    with:
-#      cluster: dev-gcp
-#      id: "tms-microfrontend-template"
-#      url: ${{needs.build.outputs.upload_url}}
-#      commitmsg: ${{ github.event.head_commit.message}}
-#    secrets: inherit
+  update-manifest-dev-gcp:
+    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
+    needs: build
+    with:
+      cluster: dev-gcp
+      id: "ao-min-side-microfrontend"
+      url: ${{needs.build.outputs.upload_url}}
+      commitmsg: ${{ github.event.head_commit.message}}
+    secrets: inherit
 
-#  update-manifest-prod-gcp:
-#    if: github.ref == 'refs/heads/main'
-#    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
-#    needs: build
-#    with:
-#      cluster: prod-gcp
-#      id: "tms-microfrontend-template"
-#      url: ${{needs.build.outputs.upload_url}}
-#      commitmsg: ${{ github.event.head_commit.message}}
-#    secrets: inherit
+  update-manifest-prod-gcp:
+    if: github.ref == 'refs/heads/main'
+    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
+    needs: build
+    with:
+      cluster: prod-gcp
+      id: "ao-min-side-microfrontend"
+      url: ${{needs.build.outputs.upload_url}}
+      commitmsg: ${{ github.event.head_commit.message}}
+    secrets: inherit
