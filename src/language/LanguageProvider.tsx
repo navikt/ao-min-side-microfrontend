@@ -5,7 +5,7 @@ export type Language = "nb" | "en" | "nn";
 const defualtLanguage = (sessionStorage.getItem("language") ?? "nb") as Language;
 export const LanguageContext = createContext(defualtLanguage);
 
-export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
+const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
   const [language, setLanguage] = useState(defualtLanguage);
 
   useEffect(() => {
@@ -22,3 +22,5 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
 
   return <LanguageContext.Provider value={language}>{children}</LanguageContext.Provider>;
 };
+
+export default LanguageProvider;

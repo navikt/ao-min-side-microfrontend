@@ -1,5 +1,5 @@
 import App from "./App";
-import { LanguageProvider } from "./language/LanguageProvider";
+import LanguageProvider from "./language/LanguageProvider";
 
 const Mikrofrontend = () => {
   return (
