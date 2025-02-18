@@ -40,8 +40,6 @@ jobs:
           team: dab
           source: ./dist/
           destination: ${{ env.REPOSITORY_NAME }}
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
-
 
       - name: "Extract manifest url"
         id: extract-manifest-url
