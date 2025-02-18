@@ -1,5 +1,5 @@
-import Komponent from "./components/Komponent";
 import "@navikt/ds-css";
+import Komponent from "./components/ArbeidsrettetOppfolgingPanel";
 
 function App() {
   return (
