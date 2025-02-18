@@ -24,7 +24,7 @@ spec:
     min: 1
     max: 2
   ingresses:
-    - "https://www.intern.dev.nav.no/ao-min-side-microfrontend"
+    - "https://www.intern.dev.nav.no/dab/ao-min-side-microfrontend"
   resources:
     limits:
       cpu: "3"
