@@ -37,7 +37,7 @@ jobs:
       - id: cdn-upload
         uses: nais/deploy/actions/cdn-upload/v2@master
         with:
-          team: mitt-team-navn
+          team: dab
           source: ./dist/
           destination: ${{ env.REPOSITORY_NAME }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
@@ -60,13 +60,13 @@ jobs:
       commitmsg: ${{ github.event.head_commit.message}}
     secrets: inherit
 
-  update-manifest-prod-gcp:
-    if: github.ref == 'refs/heads/main'
-    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
-    needs: build
-    with:
-      cluster: prod-gcp
-      id: "ao-min-side-microfrontend"
-      url: ${{needs.build.outputs.upload_url}}
-      commitmsg: ${{ github.event.head_commit.message}}
-    secrets: inherit
+#  update-manifest-prod-gcp:
+#    if: github.ref == 'refs/heads/main'
+#    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
+#    needs: build
+#    with:
+#      cluster: prod-gcp
+#      id: "ao-min-side-microfrontend"
+#      url: ${{needs.build.outputs.upload_url}}
+#      commitmsg: ${{ github.event.head_commit.message}}
+#    secrets: inherit
