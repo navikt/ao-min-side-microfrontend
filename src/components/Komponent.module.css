@@ -1,8 +1,8 @@
-.komponent {
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px;
+.detail {
+  color: var(--a-text-default);
+  margin-block-end: var(--a-spacing-4) !important;
 }
 
 .heading {
+  margin-block-end: var(--a-spacing-2) !important;
 }

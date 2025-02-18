@@ -1,0 +1,25 @@
+#linkcard {
+  flex: 1 1;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--a-surface-default);
+  box-shadow:
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 0.5px 0px rgba(0, 0, 0, 0.18);
+}
+
+#linkcard:hover {
+  border-color: var(--a-border-subtle);
+  box-shadow:
+    0px 3px 8px 0px rgba(0, 0, 0, 0.08),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.08),
+    0px 0px 0.5px 0px rgba(0, 0, 0, 0.08);
+}
+
+#linkcard:hover h3 {
+  text-decoration: underline;
+}
+
+#linkcardChevron {
+  align-self: end;
+}
