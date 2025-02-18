@@ -6,7 +6,7 @@
 .heading {
   margin-block-end: var(--a-spacing-2) !important;
   padding: 16px;
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
 }
 
 .headingDiv {
