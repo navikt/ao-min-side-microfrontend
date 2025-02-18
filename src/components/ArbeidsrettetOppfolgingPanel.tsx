@@ -4,17 +4,17 @@ import { LanguageContext } from "../language/LanguageProvider";
 import { useContext } from "react";
 import { text } from "../translations/text";
 
-const Komponent = () => {
+const ArbeidsrettetOppfolgingPanel = () => {
   const language = useContext(LanguageContext);
 
   return (
-    <div className={styles.box}>
-      <div className={styles.headingDiv}>
+    <div className={styles.container}>
+      <div className={styles.header}>
         <Heading size="small" className={styles.heading}>
           {text.card.heading[language]}
         </Heading>
       </div>
-      <div className={styles.infoDiv}>
+      <div className={styles.body}>
         <BodyShort className={styles.detail}>{text.card.description[language]}</BodyShort>
         <ReadMore header={text.card.readMoreTittel[language]}>{text.card.readMoreInnhold[language]}</ReadMore>
       </div>
@@ -22,4 +22,4 @@ const Komponent = () => {
   );
 };
 
-export default Komponent;
+export default ArbeidsrettetOppfolgingPanel;
