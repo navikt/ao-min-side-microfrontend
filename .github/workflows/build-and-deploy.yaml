@@ -39,7 +39,7 @@ jobs:
         with:
           team: dab
           source: ./dist/
-          destination: ${{ env.REPOSITORY_NAME }}
+          destination: "ao-min-side-microfrontend"
 
       - name: "Extract manifest url"
         id: extract-manifest-url
