@@ -13,14 +13,14 @@ const graphqlBody = () => ({
   variables: {},
 });
 
-const hentGjeldendeOppfolgingsperiode = async (token: string) => {
+const hentGjeldendeOppfolgingsperiode = async () => {
   const response = await fetch(veilarboppfolgingGraphqlUrl, {
     body: JSON.stringify(graphqlBody()),
-    headers: {
-      ["Nav-Consumer-Id"]: "ao-min-side-microfrontend",
-      Authorization: `Bearer ${token}`,
-      ["Content-Type"]: "application/json",
-    },
+    // headers: {
+    //   ["Nav-Consumer-Id"]: "ao-min-side-microfrontend",
+    //   Authorization: `Bearer ${token}`,
+    //   ["Content-Type"]: "application/json",
+    // },
     method: "POST",
   });
 
