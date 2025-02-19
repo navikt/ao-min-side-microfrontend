@@ -2,22 +2,20 @@ const veilarboppfolgingGraphqlUrl = "http://veilarboppfolging.poao/veilarboppfol
 
 const query = `
   query($fnr: String!) {
-    gjeldendeOppfolgingsperiode(fnr: $fnr) {
+    gjeldendeOppfolgingsperiode {
         startDato
     }
   }
 `;
 
-const graphqlBody = (fnr: string) => ({
+const graphqlBody = () => ({
   query,
-  variables: {
-    fnr,
-  },
+  variables: {},
 });
 
-const hentGjeldendeOppfolgingsperiode = async (fnr: string, token: string) => {
+const hentGjeldendeOppfolgingsperiode = async (token: string) => {
   const response = await fetch(veilarboppfolgingGraphqlUrl, {
-    body: JSON.stringify(graphqlBody(fnr)),
+    body: JSON.stringify(graphqlBody()),
     headers: {
       ["Nav-Consumer-Id"]: "ao-min-side-microfrontend",
       Authorization: `Bearer ${token}`,
