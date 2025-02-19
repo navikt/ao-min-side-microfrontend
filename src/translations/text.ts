@@ -1,4 +1,4 @@
-export const text = {
+export const text = (dato: string) => ({
   card: {
     heading: {
       nn: "",
@@ -7,7 +7,7 @@ export const text = {
     },
     description: {
       nn: "",
-      nb: "Nav registrerte deg for arbeidsrettet oppfølging torsdag 13. februar 2025.",
+      nb: `Nav registrerte deg for arbeidsrettet oppfølging ${dato}`,
       en: "",
     },
     readMoreTittel: {
@@ -21,4 +21,4 @@ export const text = {
       en: "",
     },
   },
-};
+});

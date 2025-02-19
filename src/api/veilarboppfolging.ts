@@ -1,24 +1,33 @@
+interface GjeldendeOppfolgingsperiode {
+  data: {
+    gjeldendeOppfolgingsperiode: {
+      tidspunkt: string;
+    };
+  };
+}
+
 const veilarboppfolgingGraphqlUrl = "http://veilarboppfolging.poao/veilarboppfolging/api/graphql";
 
 const query = `
   query($fnr: String!) {
     gjeldendeOppfolgingsperiode {
-        startDato
+        tidspunkt
     }
   }
 `;
 
 const graphqlBody = () => ({
   query,
-  variables: {},
+  variables: {
+    fnr: null,
+  },
 });
 
-const hentGjeldendeOppfolgingsperiode = async (token: string) => {
+const hentGjeldendeOppfolgingsperiode = async () => {
   const response = await fetch(veilarboppfolgingGraphqlUrl, {
     body: JSON.stringify(graphqlBody()),
     headers: {
       ["Nav-Consumer-Id"]: "ao-min-side-microfrontend",
-      Authorization: `Bearer ${token}`,
       ["Content-Type"]: "application/json",
     },
     method: "POST",
@@ -28,7 +37,7 @@ const hentGjeldendeOppfolgingsperiode = async (token: string) => {
     throw new Error(`Kunne ikke hente gjeldende oppfølgingsperiode: ${response.status}`);
   }
 
-  return response.json();
+  return ((await response.json()) as GjeldendeOppfolgingsperiode).data.gjeldendeOppfolgingsperiode.tidspunkt;
 };
 
 export const VeilarboppfolgingApi = {
