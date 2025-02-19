@@ -1,0 +1,50 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: ao-min-side-microfrontend
+  namespace: dab
+  labels:
+    team: dab
+spec:
+  image: europe-north1-docker.pkg.dev/nais-management-233d/poao/poao-frontend:2025.01.10_07.58-0f9a46dccc10
+  port: 8080
+  ingresses:
+    - https://ao-min-side-microfrontend.dev.nav.no
+  liveness:
+    path: /internal/alive
+    initialDelay: 10
+  readiness:
+    path: /internal/ready
+    initialDelay: 10
+  replicas:
+    min: 1
+    max: 2
+    cpuThresholdPercentage: 75
+  resources:
+    requests:
+      cpu: 250m
+      memory: 256Mi
+  idporten:
+    enabled: true
+    sidecar:
+      enabled: true
+  tokenx:
+    enabled: true
+  accessPolicy:
+    outbound:
+      rules:
+        - application: veilarboppfolging
+          namespace: poao
+  env:
+    - name: JSON_CONFIG
+      value: >
+        {
+          "auth": {
+            "loginProvider": "ID_PORTEN"
+          },
+          "proxies": [
+            {
+              "fromPath": "/veilarboppfolging", "toUrl": "http://veilarboppfolging.poao/veilarboppfolging", "toApp": { "name": "veilarboppfolging", "namespace": "poao", "cluster": "dev-gcp" } },
+            }
+          ]
+        }

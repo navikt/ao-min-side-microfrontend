@@ -1,0 +1,28 @@
+name: paoa frontend deploy dev
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/workflows/poao-frontend-deploy-dev.yml'
+      - '.nais/nais-dev.yaml'
+  workflow_dispatch:
+
+concurrency:
+  group: poao_frontend_deploy_dev
+  cancel-in-progress: true
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: deploy gcp dev
+        uses: nais/deploy/actions/deploy@v2
+        env:
+          CLUSTER: dev-gcp
+          RESOURCE: .nais/nais-dev.yaml
