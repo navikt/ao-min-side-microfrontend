@@ -44,7 +44,9 @@ spec:
           },
           "proxies": [
             {
-              "fromPath": "/veilarboppfolging", "toUrl": "http://veilarboppfolging.poao/veilarboppfolging", "toApp": { "name": "veilarboppfolging", "namespace": "poao", "cluster": "dev-gcp" } },
+              "fromPath": "/veilarboppfolging", 
+              "toUrl": "http://veilarboppfolging.poao/veilarboppfolging", 
+              "toApp": { "name": "veilarboppfolging", "namespace": "poao", "cluster": "dev-gcp" }
             }
           ]
         }

@@ -1,4 +1,4 @@
-name: paoa frontend deploy dev
+name: POAO frontend deploy dev
 
 on:
   push:
