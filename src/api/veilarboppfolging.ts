@@ -6,7 +6,7 @@ interface GjeldendeOppfolgingsperiode {
   };
 }
 
-const veilarboppfolgingGraphqlUrl = "https://veilarboppfolging.poao/veilarboppfolging/api/graphql";
+const veilarboppfolgingGraphqlUrl = "http://veilarboppfolging.poao/veilarboppfolging/api/graphql";
 
 const query = `
   query($fnr: String!) {
