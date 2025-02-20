@@ -31,7 +31,7 @@ const hentGjeldendeOppfolgingsperiode = async () => {
       ["Content-Type"]: "application/json",
     },
     method: "POST",
-    credentials: "same-origin" as RequestCredentials,
+    credentials: "include",
   });
 
   if (!response.ok) {
