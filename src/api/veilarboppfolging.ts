@@ -9,7 +9,7 @@ interface GjeldendeOppfolgingsperiode {
 const veilarboppfolgingGraphqlUrl = "https://ao-min-side-microfrontend.intern.dev.nav.no/veilarboppfolging/api/graphql";
 
 const query = `
-  query($fnr: String!) {
+  query {
     gjeldendeOppfolgingsperiode {
         startTidspunkt
     }
@@ -18,9 +18,7 @@ const query = `
 
 const graphqlBody = () => ({
   query,
-  variables: {
-    fnr: null,
-  },
+  variables: {},
 });
 
 const hentGjeldendeOppfolgingsperiode = async () => {
