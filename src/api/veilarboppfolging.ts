@@ -11,7 +11,7 @@ const veilarboppfolgingGraphqlUrl = "http://veilarboppfolging.poao/veilarboppfol
 const query = `
   query($fnr: String!) {
     gjeldendeOppfolgingsperiode {
-        tidspunkt
+        startTidspunkt
     }
   }
 `;
