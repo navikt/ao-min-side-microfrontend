@@ -43,7 +43,7 @@ spec:
           "auth": {
             "loginProvider": "ID_PORTEN"
           },
-          "cors": { "origin": "intern.dev.nav.no" },
+          "cors": { "origin": "https://www.intern.dev.nav.no" },
           "proxies": [
             {
               "fromPath": "/veilarboppfolging", 
