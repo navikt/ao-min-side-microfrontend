@@ -42,7 +42,7 @@ spec:
           "auth": {
             "loginProvider": "ID_PORTEN"
           },
-          "cors": { "origin": "*.nav.no" },
+          "cors": { "origin": "ansatt.dev.nav.no" },
           "proxies": [
             {
               "fromPath": "/veilarboppfolging", 
