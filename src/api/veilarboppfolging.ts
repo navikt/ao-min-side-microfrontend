@@ -1,7 +1,7 @@
 interface GjeldendeOppfolgingsperiode {
   data: {
     gjeldendeOppfolgingsperiode: {
-      tidspunkt: string;
+      startTidspunkt: string;
     };
   };
 }
@@ -36,7 +36,7 @@ const hentGjeldendeOppfolgingsperiode = async () => {
     throw new Error(`Kunne ikke hente gjeldende oppfølgingsperiode: ${response.status}`);
   }
 
-  return ((await response.json()) as GjeldendeOppfolgingsperiode).data.gjeldendeOppfolgingsperiode.tidspunkt;
+  return ((await response.json()) as GjeldendeOppfolgingsperiode).data.gjeldendeOppfolgingsperiode.startTidspunkt;
 };
 
 export const VeilarboppfolgingApi = {
