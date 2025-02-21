@@ -1,14 +1,24 @@
 import styles from "./ArbeidsrettetOppfolgingPanel.module.css";
 import { BodyShort, Heading, ReadMore } from "@navikt/ds-react";
-import { LanguageContext } from "../language/LanguageProvider";
+import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
 import { text } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
 
-const formatDate = (date: Date, locale: string): string => {
-  console.log("locale: ", locale);
+function getLocale(language: Language) {
+  if (language === "nb") {
+    return "nb-NO";
+  } else if (language === "nn") {
+    return "nn-NO";
+  } else {
+    return "en-US";
+  }
+}
 
-  const formatter = new Intl.DateTimeFormat(locale, {
+const formatDate = (date: Date, language: Language): string => {
+  console.log("language: ", language);
+
+  const formatter = new Intl.DateTimeFormat(getLocale(language), {
     day: "numeric",
     month: "long",
     year: "numeric",
