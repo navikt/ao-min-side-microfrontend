@@ -6,6 +6,8 @@ import { text } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
 
 const formatDate = (date: Date, locale: string): string => {
+  console.log("locale: ", locale);
+
   const formatter = new Intl.DateTimeFormat(locale, {
     day: "numeric",
     month: "long",
@@ -25,7 +27,11 @@ const ArbeidsrettetOppfolgingPanel = () => {
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode().then((response) => setTimestamp(response));
   }, []);
 
+  console.log("timestamp: ", timestamp);
+
   const cleanedTimestamp = timestamp.replace(/(\.\d{3})\d*/, "$1"); // Trimmer til tre desimaler
+
+  console.log("cleanedTimestamp: ", cleanedTimestamp);
 
   const startTidspunkt = formatDate(new Date(cleanedTimestamp), language);
 
