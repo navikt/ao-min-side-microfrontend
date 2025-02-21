@@ -43,19 +43,19 @@ const ArbeidsrettetOppfolgingPanel = () => {
 
   console.log("cleanedTimestamp: ", cleanedTimestamp);
 
-  const startTidspunkt = formatDate(new Date(cleanedTimestamp), language);
+  // const startTidspunkt = formatDate(new Date(cleanedTimestamp), language);
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <Heading size="small" className={styles.heading}>
-          {text(startTidspunkt).card.heading[language]}
+          {text(timestamp).card.heading[language]}
         </Heading>
       </div>
       <div className={styles.body}>
-        <BodyShort className={styles.detail}>{text(startTidspunkt).card.description[language]}</BodyShort>
-        <ReadMore header={text(startTidspunkt).card.readMoreTittel[language]}>
-          {text(startTidspunkt).card.readMoreInnhold[language]}
+        <BodyShort className={styles.detail}>{text(timestamp).card.description[language]}</BodyShort>
+        <ReadMore header={text(timestamp).card.readMoreTittel[language]}>
+          {text(timestamp).card.readMoreInnhold[language]}
         </ReadMore>
       </div>
     </div>
