@@ -2,7 +2,7 @@ import styles from "./ArbeidsrettetOppfolgingPanel.module.css";
 import { BodyShort, Heading, ReadMore } from "@navikt/ds-react";
 import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
-import { text } from "../translations/text";
+import { cardText, descriptionText, readMoreInnholdText, readMoreTittelText } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
 
 function getLocale(language: Language) {
@@ -48,13 +48,13 @@ const ArbeidsrettetOppfolgingPanel = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <Heading size="small" className={styles.heading}>
-          {text(startTidspunkt).card.heading[language]}
+          {cardText().heading[language]}
         </Heading>
       </div>
       <div className={styles.body}>
-        <BodyShort className={styles.detail}>{text(startTidspunkt).card.description[language]}</BodyShort>
-        <ReadMore header={text(startTidspunkt).card.readMoreTittel[language]}>
-          {text(startTidspunkt).card.readMoreInnhold[language]}
+        <BodyShort className={styles.detail}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
+        <ReadMore header={readMoreTittelText().readMoreTittel[language]}>
+          {readMoreInnholdText().readMoreInnhold[language]}
         </ReadMore>
       </div>
     </div>
