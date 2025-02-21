@@ -1,9 +1,8 @@
-name: "Build and deploy to DEV"
+name: "Build and deploy to PROD"
 on:
   push:
     branches:
       - "main"
-      - "dev-*"
 
 jobs:
   build:
@@ -48,23 +47,13 @@ jobs:
           first_file=$(echo $files | cut -d',' -f1)
           echo "upload_url=https://cdn.nav.no/$first_file" >> $GITHUB_OUTPUT
 
-  update-manifest-dev-gcp:
+  update-manifest-prod-gcp:
+    if: github.ref == 'refs/heads/main'
     uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
     needs: build
     with:
-      cluster: dev-gcp
+      cluster: prod-gcp
       id: "ao-min-side-microfrontend"
       url: ${{needs.build.outputs.upload_url}}
       commitmsg: ${{ github.event.head_commit.message}}
     secrets: inherit
-
-#  update-manifest-prod-gcp:
-#    if: github.ref == 'refs/heads/main'
-#    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
-#    needs: build
-#    with:
-#      cluster: prod-gcp
-#      id: "ao-min-side-microfrontend"
-#      url: ${{needs.build.outputs.upload_url}}
-#      commitmsg: ${{ github.event.head_commit.message}}
-#    secrets: inherit

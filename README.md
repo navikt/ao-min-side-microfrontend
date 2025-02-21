@@ -1,4 +1,4 @@
-# tms-microfrontend-template
+# ao-min-side-microfrontend
 
 Brukt tms-microfrontend-template for å opprette microfrontenden. Vises på min side når en bruker er registrert for arbeidsrettet oppfølging.
 
