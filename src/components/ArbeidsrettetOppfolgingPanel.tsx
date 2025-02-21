@@ -16,14 +16,10 @@ function getLocale(language: Language) {
 }
 
 const formatDate = (timestamp: string, language: Language): string => {
-  console.log("timestamp: ", timestamp);
   const cleanedTimestamp = timestamp.replace(/(\.\d{3})\d*/, "$1");
-  console.log(cleanedTimestamp);
   const date = new Date(cleanedTimestamp);
-  console.log("date: ", date);
 
   if (isNaN(date.getTime())) {
-    console.error("Invalid timestamp:", cleanedTimestamp);
     return "Invalid date";
   }
 
