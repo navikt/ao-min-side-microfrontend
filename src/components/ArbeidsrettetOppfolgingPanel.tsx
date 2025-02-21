@@ -6,12 +6,10 @@ import { cardText, descriptionText, readMoreInnholdText, readMoreTittelText } fr
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
 
 function getLocale(language: Language) {
-  if (language === "nb") {
-    return "nb-NO";
-  } else if (language === "nn") {
-    return "nn-NO";
-  } else {
+  if (language === "en") {
     return "en-US";
+  } else {
+    return "nb-NO";
   }
 }
 
