@@ -1,11 +1,8 @@
-name: deploy feature branch
-run-name: Deploy feature branch ${{ github.ref_name }} by @${{ github.actor }}
+name: "Build and deploy to dev and prod"
 on:
-  workflow_dispatch:
-
-concurrency:
-  group: deploy-feature-branch
-  cancel-in-progress: true
+  push:
+    branches:
+      - "main"
 
 jobs:
   build:
@@ -55,6 +52,17 @@ jobs:
     needs: build
     with:
       cluster: dev-gcp
+      id: "ao-min-side-microfrontend"
+      url: ${{needs.build.outputs.upload_url}}
+      commitmsg: ${{ github.event.head_commit.message}}
+    secrets: inherit
+
+  update-manifest-prod-gcp:
+    if: github.ref == 'refs/heads/main'
+    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
+    needs: build
+    with:
+      cluster: prod-gcp
       id: "ao-min-side-microfrontend"
       url: ${{needs.build.outputs.upload_url}}
       commitmsg: ${{ github.event.head_commit.message}}
