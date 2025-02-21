@@ -22,6 +22,7 @@ const formatDate = (timestamp: string, language: Language): string => {
   }
 
   const formatter = new Intl.DateTimeFormat(getLocale(language), {
+    weekday: "long",
     day: "numeric",
     month: "long",
     year: "numeric",
