@@ -57,14 +57,3 @@ jobs:
       url: ${{needs.build.outputs.upload_url}}
       commitmsg: ${{ github.event.head_commit.message}}
     secrets: inherit
-
-#  update-manifest-prod-gcp:
-#    if: github.ref == 'refs/heads/main'
-#    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
-#    needs: build
-#    with:
-#      cluster: prod-gcp
-#      id: "ao-min-side-microfrontend"
-#      url: ${{needs.build.outputs.upload_url}}
-#      commitmsg: ${{ github.event.head_commit.message}}
-#    secrets: inherit
