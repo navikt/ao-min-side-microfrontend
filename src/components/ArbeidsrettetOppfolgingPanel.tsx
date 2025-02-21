@@ -18,7 +18,7 @@ const formatDate = (timestamp: string, language: Language): string => {
   const date = new Date(cleanedTimestamp);
 
   if (isNaN(date.getTime())) {
-    return "Invalid date";
+    return "(fant ikke dato)";
   }
 
   const formatter = new Intl.DateTimeFormat(getLocale(language), {
