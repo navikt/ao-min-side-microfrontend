@@ -10,7 +10,6 @@ spec:
   port: 8080
   ingresses:
     - https://ao-min-side-microfrontend.intern.dev.nav.no
-    - https://ao-min-side-microfrontend.ansatt.dev.nav.no
   liveness:
     path: /internal/alive
     initialDelay: 10

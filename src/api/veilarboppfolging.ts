@@ -1,3 +1,5 @@
+import { isDevEnvironment } from "../utils/envUtil";
+
 interface GjeldendeOppfolgingsperiode {
   data: {
     gjeldendeOppfolgingsperiode: {
@@ -11,7 +13,7 @@ const devBasePath = "https://ao-min-side-microfrontend.intern.dev.nav.no";
 const prodBasePath = "https://ao-min-side-microfrontend.nav.no";
 
 const getVeilarbOppfolgingUrl = () => {
-  if (import.meta.env.DEV) {
+  if (isDevEnvironment()) {
     return `${devBasePath}${veilarbOppfolgingPath}`;
   } else {
     return `${prodBasePath}${veilarbOppfolgingPath}`;
