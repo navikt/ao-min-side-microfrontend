@@ -1,3 +1,5 @@
+import { isDevEnvironment } from "../utils/envUtil";
+
 interface GjeldendeOppfolgingsperiode {
   data: {
     gjeldendeOppfolgingsperiode: {
@@ -6,7 +8,17 @@ interface GjeldendeOppfolgingsperiode {
   };
 }
 
-const veilarboppfolgingGraphqlUrl = "https://ao-min-side-microfrontend.intern.dev.nav.no/veilarboppfolging/api/graphql";
+const veilarbOppfolgingPath = "/veilarboppfolging/api/graphql";
+const devBasePath = "https://ao-min-side-microfrontend.intern.dev.nav.no";
+const prodBasePath = "https://ao-min-side-microfrontend.nav.no";
+
+const getVeilarbOppfolgingUrl = () => {
+  if (isDevEnvironment()) {
+    return `${devBasePath}${veilarbOppfolgingPath}`;
+  } else {
+    return `${prodBasePath}${veilarbOppfolgingPath}`;
+  }
+};
 
 const query = `
   query {
@@ -22,7 +34,7 @@ const graphqlBody = () => ({
 });
 
 const hentGjeldendeOppfolgingsperiode = async () => {
-  const response = await fetch(veilarboppfolgingGraphqlUrl, {
+  const response = await fetch(getVeilarbOppfolgingUrl(), {
     body: JSON.stringify(graphqlBody()),
     headers: {
       ["Nav-Consumer-Id"]: "ao-min-side-microfrontend",

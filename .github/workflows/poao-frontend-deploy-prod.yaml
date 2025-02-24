@@ -1,0 +1,28 @@
+name: POAO frontend deploy prod
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/workflows/poao-frontend-deploy-prod.yml'
+      - '.nais/nais-prod.yaml'
+  workflow_dispatch:
+
+concurrency:
+  group: poao_frontend_deploy_prod
+  cancel-in-progress: true
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: deploy gcp prod
+        uses: nais/deploy/actions/deploy@v2
+        env:
+          CLUSTER: prod-gcp
+          RESOURCE: .nais/nais-prod.yaml
