@@ -54,7 +54,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
       </div>
       <div className={styles.body}>
         <BodyShort className={styles.detail}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
-        <ReadMore header={readMoreTittelText().readMoreTittel[language]}>
+        <ReadMore data-umami-event="Les mer" header={readMoreTittelText().readMoreTittel[language]}>
           {readMoreInnholdText().readMoreInnhold[language]}
         </ReadMore>
       </div>
