@@ -40,6 +40,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
 
   useEffect(() => {
     loggBesok();
+    umami.track((props) => ({ ...props, url: "/ao-min-side-microfrontend" }));
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode().then((response) => setTimestamp(response));
   }, []);
 
