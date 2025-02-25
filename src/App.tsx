@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     loadUmami()
       .then(() => {
-        window.umami.track((props) => ({ ...props, app: "ao-min-side-microfrontend" }));
+        window.umami.track("Side lastet", { app: "ao-min-side-microfrontend" });
       })
       .catch((error) => console.error("Umami tracking error:", error));
   }, []);
