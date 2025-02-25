@@ -6,9 +6,7 @@ import { loadUmami } from "./utils/umamiTracker";
 function App() {
   useEffect(() => {
     loadUmami()
-      .then(() => {
-        window.umami.track("Side lastet", { app: "ao-min-side-microfrontend" });
-      })
+      .then(() => {})
       .catch((error) => console.error("Umami tracking error:", error));
   }, []);
 

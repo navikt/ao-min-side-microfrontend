@@ -55,9 +55,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
       <div className={styles.body}>
         <BodyShort className={styles.detail}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
         <ReadMore
-          onClick={() =>
-            window.umami.track("Slik brukte vi personopplysningene dine", { app: "ao-min-side-microfrontend" })
-          }
+          data-umami-event="Slik brukte vi personopplysningene dine"
           header={readMoreTittelText().readMoreTittel[language]}
         >
           {readMoreInnholdText().readMoreInnhold[language]}
