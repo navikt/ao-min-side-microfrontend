@@ -40,7 +40,17 @@ const ArbeidsrettetOppfolgingPanel = () => {
 
   useEffect(() => {
     loggBesok();
-    umami.track((props) => ({ ...props, url: "/ao-min-side-microfrontend" }));
+
+    const waitForUmami = () => {
+      if (window.umami) {
+        window.umami.track((props) => ({ ...props, url: "/ao-min-side-microfrontend" }));
+      } else {
+        setTimeout(waitForUmami, 500); // Prøv igjen etter 500ms
+      }
+    };
+
+    waitForUmami();
+
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode().then((response) => setTimestamp(response));
   }, []);
 
