@@ -40,17 +40,6 @@ const ArbeidsrettetOppfolgingPanel = () => {
 
   useEffect(() => {
     loggBesok();
-
-    const waitForUmami = () => {
-      if (window.umami) {
-        window.umami.track((props) => ({ ...props, url: "/ao-min-side-microfrontend" }));
-      } else {
-        setTimeout(waitForUmami, 500); // Prøv igjen etter 500ms
-      }
-    };
-
-    waitForUmami();
-
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode().then((response) => setTimestamp(response));
   }, []);
 
@@ -65,7 +54,16 @@ const ArbeidsrettetOppfolgingPanel = () => {
       </div>
       <div className={styles.body}>
         <BodyShort className={styles.detail}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
-        <ReadMore data-umami-event="Les mer" header={readMoreTittelText().readMoreTittel[language]}>
+        <ReadMore
+          onClick={() =>
+            window.umami.track((props) => ({
+              ...props,
+              event: "Slik brukte vi personopplysningene dine",
+              app: "ao-min-side-microfrontend",
+            }))
+          }
+          header={readMoreTittelText().readMoreTittel[language]}
+        >
           {readMoreInnholdText().readMoreInnhold[language]}
         </ReadMore>
       </div>
