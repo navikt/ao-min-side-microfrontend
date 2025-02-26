@@ -54,10 +54,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
       </div>
       <div className={styles.body}>
         <BodyShort className={styles.detail}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
-        <ReadMore
-          data-umami-event="Slik brukte vi personopplysningene dine"
-          header={readMoreTittelText().readMoreTittel[language]}
-        >
+        <ReadMore header={readMoreTittelText().readMoreTittel[language]}>
           {readMoreInnholdText().readMoreInnhold[language]}
         </ReadMore>
       </div>
