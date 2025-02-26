@@ -7,7 +7,7 @@ import { waitFor } from "@testing-library/react";
 describe("Tests for ArbeidsrettetOppfolgingPanel", () => {
   it("should have a headline", () => {
     render(<ArbeidsrettetOppfolgingPanel />);
-    expect(screen.getByText("Du er registrert for arbeidsrettet oppfølging")).toBeDefined();
+    expect(screen.getByText("Du har startet på arbeidsrettet oppfølging")).toBeDefined();
   });
 
   it("should have a description", () => {

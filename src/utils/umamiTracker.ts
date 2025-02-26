@@ -5,6 +5,11 @@ export function loadUmami(): Promise<void> {
       return;
     }
 
+    if (document.querySelector(`script[src='https://cdn.nav.no/team-researchops/sporing/sporing.js']`)) {
+      resolve();
+      return;
+    }
+
     const script = document.createElement("script");
     script.src = "https://cdn.nav.no/team-researchops/sporing/sporing.js";
     script.defer = true;

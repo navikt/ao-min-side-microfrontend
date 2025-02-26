@@ -5,13 +5,11 @@ import { loadUmami } from "./utils/umamiTracker";
 import { isDevEnvironment } from "./utils/envUtil";
 
 function App() {
-  if (isDevEnvironment()) {
-    useEffect(() => {
-      loadUmami()
-        .then(() => {})
-        .catch((error) => console.log("Umami feil:", error));
-    }, []);
-  }
+  useEffect(() => {
+    if (isDevEnvironment()) {
+      loadUmami().catch((error) => console.log("Umami feil:", error));
+    }
+  }, []);
   return (
     <section>
       <ArbeidsrettetOppfolgingPanel />
