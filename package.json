@@ -28,20 +28,20 @@
     "@types/umami": "^2.10.0",
     "@typescript-eslint/eslint-plugin": "6.18.1",
     "@typescript-eslint/parser": "6.18.1",
-    "@vitejs/plugin-react": "4.2.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-react": "7.33.2",
     "husky": "8.0.3",
     "jsdom": "23.2.0",
-    "lint-staged": "15.2.0",
+    "lint-staged": "^15.4.3",
     "prettier": "3.1.1",
     "rollup-plugin-import-map": "3.0.0",
     "typescript": "5.3.3",
-    "vite": "5.4.14",
+    "vite": "^6.2.0",
     "vite-plugin-css-injected-by-js": "3.3.1",
-    "vitest": "1.6.1"
+    "vitest": "^3.0.7"
   },
   "prettier": {
     "printWidth": 120
