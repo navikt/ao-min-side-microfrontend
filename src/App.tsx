@@ -9,7 +9,7 @@ function App() {
     useEffect(() => {
       loadUmami()
         .then(() => {})
-        .catch((error) => console.error("Umami tracking error:", error));
+        .catch((error) => console.log("Umami feil:", error));
     }, []);
   }
   return (
