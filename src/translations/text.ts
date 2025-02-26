@@ -1,7 +1,7 @@
-export const cardText = () => ({
+export const headingText = () => ({
   heading: {
-    nn: "Du har startet på arbeidsrettet oppfølging",
-    nb: "Du er registrert for arbeidsrettet oppfølging",
+    nn: "Du har starta på arbeidsretta oppfølging",
+    nb: "Du har startet på arbeidsrettet oppfølging",
     en: "You have started continued employment guidance",
   },
 });
