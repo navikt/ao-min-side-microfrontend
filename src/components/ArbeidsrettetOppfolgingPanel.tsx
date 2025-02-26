@@ -2,7 +2,7 @@ import styles from "./ArbeidsrettetOppfolgingPanel.module.css";
 import { BodyShort, Heading, ReadMore } from "@navikt/ds-react";
 import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
-import { cardText, descriptionText, readMoreInnholdText, readMoreTittelText } from "../translations/text";
+import { headingText, descriptionText, readMoreInnholdText, readMoreTittelText } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
 import { loggBesok } from "../utils/amplitude";
 
@@ -49,7 +49,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <Heading size="small" className={styles.heading}>
-          {cardText().heading[language]}
+          {headingText().heading[language]}
         </Heading>
       </div>
       <div className={styles.body}>
