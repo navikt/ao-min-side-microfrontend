@@ -1,4 +1,4 @@
-import { isDevEnvironment } from "../utils/envUtil";
+import { isDevEnvironment, isLocalEnvironment } from "../utils/envUtil";
 
 interface GjeldendeOppfolgingsperiode {
   data: {
@@ -34,6 +34,11 @@ const graphqlBody = () => ({
 });
 
 const hentGjeldendeOppfolgingsperiode = async () => {
+  if (isLocalEnvironment()) {
+    const today = new Date();
+    return today.toISOString();
+  }
+
   const response = await fetch(getVeilarbOppfolgingUrl(), {
     body: JSON.stringify(graphqlBody()),
     headers: {
