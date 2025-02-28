@@ -5,13 +5,17 @@ import { act } from "react-dom/test-utils";
 import { waitFor } from "@testing-library/react";
 
 describe("Tests for ArbeidsrettetOppfolgingPanel", () => {
-  it("should have a headline", () => {
-    render(<ArbeidsrettetOppfolgingPanel />);
+  it("should have a headline", async () => {
+    await act(async () => {
+      render(<ArbeidsrettetOppfolgingPanel />);
+    });
     expect(screen.getByText("Du har startet på arbeidsrettet oppfølging")).toBeDefined();
   });
 
-  it("should have a description", () => {
-    render(<ArbeidsrettetOppfolgingPanel />);
+  it("should have a description", async () => {
+    await act(async () => {
+      render(<ArbeidsrettetOppfolgingPanel />);
+    });
     expect(screen.getByText(/Nav startet deg på arbeidsrettet oppfølging/)).toBeDefined();
   });
 
@@ -27,18 +31,25 @@ describe("Tests for ArbeidsrettetOppfolgingPanel", () => {
     });
   });
 
-  it("error fetching date should show missing date message", () => {
-    render(<ArbeidsrettetOppfolgingPanel />);
-    expect(screen.getByText(/(fant ikke dato)/)).toBeDefined();
+  it("error fetching date should display without date", async () => {
+    VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode = async () => "";
+    await act(async () => {
+      render(<ArbeidsrettetOppfolgingPanel />);
+    });
+    expect(screen.getByText("Nav startet deg på arbeidsrettet oppfølging.")).toBeDefined();
   });
 
-  it("should have a read more title", () => {
-    render(<ArbeidsrettetOppfolgingPanel />);
+  it("should have a read more title", async () => {
+    await act(async () => {
+      render(<ArbeidsrettetOppfolgingPanel />);
+    });
     expect(screen.getByText("Slik brukte vi personopplysningene dine")).toBeDefined();
   });
 
-  it("should have a read more content", () => {
-    render(<ArbeidsrettetOppfolgingPanel />);
+  it("should have a read more content", async () => {
+    await act(async () => {
+      render(<ArbeidsrettetOppfolgingPanel />);
+    });
     expect(screen.getByText(/Da vi registrerte deg behandlet vi opplysninger om din alder/)).toBeDefined();
   });
 });
