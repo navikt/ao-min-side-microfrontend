@@ -61,7 +61,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
       </div>
       <div className={styles.body}>
         <div className={styles.headerContainer}>
-          <Heading size="small" level="2">
+          <Heading size="xsmall" level="2">
             {/*{text.aktivitetsplanTittel[language]}*/}
             Aktivitetsplan
           </Heading>
@@ -73,7 +73,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
       </div>
       <div className={styles.body}>
         <div className={styles.headerContainer}>
-          <Heading size="small" level="2">
+          <Heading size="xsmall" level="2">
             Dialog med veilederen din
           </Heading>
           <ChevronRightIcon className={styles.chevron} aria-hidden fontSize="24px" />
