@@ -1,10 +1,11 @@
 import styles from "./ArbeidsrettetOppfolgingPanel.module.css";
-import { BodyShort, Heading, ReadMore } from "@navikt/ds-react";
+import { BodyLong, BodyShort, Heading, ReadMore } from "@navikt/ds-react";
 import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
 import { headingText, descriptionText, readMoreInnholdText, readMoreTittelText } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
 import { loggBesok } from "../utils/amplitude";
+import { ChevronRightIcon } from "@navikt/aksel-icons";
 
 function getLocale(language: Language) {
   if (language === "en") {
@@ -57,6 +58,30 @@ const ArbeidsrettetOppfolgingPanel = () => {
         <ReadMore header={readMoreTittelText().readMoreTittel[language]}>
           {readMoreInnholdText().readMoreInnhold[language]}
         </ReadMore>
+      </div>
+      <div className={styles.body}>
+        <div className={styles.headerContainer}>
+          <Heading size="small" level="2">
+            {/*{text.aktivitetsplanTittel[language]}*/}
+            Aktivitetsplan
+          </Heading>
+          <ChevronRightIcon className={styles.chevron} aria-hidden fontSize="24px" />
+        </div>
+        <BodyLong className={styles.text}>
+          I aktivitetsplanen holder du oversikt over det du gjør for å komme i jobb eller annen aktivitet.
+        </BodyLong>
+      </div>
+      <div className={styles.body}>
+        <div className={styles.headerContainer}>
+          <Heading size="small" level="2">
+            Dialog med veilederen din
+          </Heading>
+          <ChevronRightIcon className={styles.chevron} aria-hidden fontSize="24px" />
+        </div>
+        <BodyLong className={styles.text}>
+          Du som får arbeidsoppfølging kan kontakte veilederen din her om oppfølging, for eksempel avtalte møter,
+          aktiviteter og tiltak.
+        </BodyLong>
       </div>
     </div>
   );
