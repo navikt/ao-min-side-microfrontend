@@ -31,12 +31,12 @@ describe("Tests for ArbeidsrettetOppfolgingPanel", () => {
     });
   });
 
-  it("error fetching date should display without date", async () => {
+  it("error fetching date should display missing message", async () => {
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode = async () => "";
     await act(async () => {
       render(<ArbeidsrettetOppfolgingPanel />);
     });
-    expect(screen.getByText("Nav startet deg på arbeidsrettet oppfølging.")).toBeDefined();
+    expect(screen.getByText(/(fant ikke dato)/)).toBeDefined();
   });
 
   it("should have a read more title", async () => {

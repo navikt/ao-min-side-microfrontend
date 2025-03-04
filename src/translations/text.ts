@@ -8,9 +8,9 @@ export const headingText = () => ({
 
 export const descriptionText = (dato: string) => ({
   description: {
-    nn: `Nav starta deg på arbeidsretta oppfølging${dato}.`,
-    nb: `Nav startet deg på arbeidsrettet oppfølging${dato}.`,
-    en: `Nav started you on continued employment guidance${dato}.`,
+    nn: `Nav starta deg på arbeidsretta oppfølging ${dato}.`,
+    nb: `Nav startet deg på arbeidsrettet oppfølging ${dato}.`,
+    en: `Nav started you on continued employment guidance ${dato}.`,
   },
 });
 
