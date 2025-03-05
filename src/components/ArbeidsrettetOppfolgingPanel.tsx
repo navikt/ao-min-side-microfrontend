@@ -20,7 +20,7 @@ const formatDate = (timestamp: string, language: Language): string => {
   const date = new Date(cleanedTimestamp);
 
   if (isNaN(date.getTime())) {
-    return "";
+    return "(fant ikke dato)";
   }
 
   const formatter = new Intl.DateTimeFormat(getLocale(language), {
@@ -44,7 +44,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode().then((response) => setTimestamp(response));
   }, []);
 
-  const startTidspunkt = timestamp.length > 1 ? " " + formatDate(timestamp, language) : "";
+  const startTidspunkt = formatDate(timestamp, language);
 
   return (
     <div className={styles.container}>
