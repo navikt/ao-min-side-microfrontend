@@ -17,7 +17,7 @@ const Aktivitetsplan = ({ language }: Props) => {
         <div>
           <AktivitetsplanPiktogram />
         </div>
-        <div>
+        <div className={styles.textContainer}>
           <Heading size="xsmall" className={styles.heading}>
             {text.aktivitetsplanTittel[language]}
           </Heading>

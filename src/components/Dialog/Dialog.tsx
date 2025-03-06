@@ -17,7 +17,7 @@ const DialogVeileder = ({ language }: Props) => {
         <div>
           <DialogPiktogram />
         </div>
-        <div className={styles.padding}>
+        <div className={styles.textContainer}>
           <Heading size="xsmall" className={styles.heading}>
             {text.dialogTittel[language]}
           </Heading>
