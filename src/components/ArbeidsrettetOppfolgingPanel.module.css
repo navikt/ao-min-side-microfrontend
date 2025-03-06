@@ -45,7 +45,7 @@
 }
 
 .titlePadding {
-  padding: 15px;
+  padding: 10px 10px 10px 5px;
   border-bottom: 1px solid var(--a-border-subtle);
 }
 .padding {
@@ -54,8 +54,8 @@
 }
 
 .bodyPadding {
-  padding: 10px 10px 15px 0px;
+  padding: 5px 10px 10px 0px;
 }
 .bottomPadding {
-  padding: 15px 15px 15px 25px;
+  padding: 10px 15px 15px 20px;
 }
