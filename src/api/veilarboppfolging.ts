@@ -1,4 +1,4 @@
-import { isDevEnvironment, isLocalEnvironment } from "../utils/envUtil";
+import { isDevEnvironment, isLocalEnvironment } from "../utils/environment";
 
 interface GjeldendeOppfolgingsperiode {
   data: {
