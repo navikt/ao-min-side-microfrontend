@@ -48,20 +48,20 @@ const ArbeidsrettetOppfolgingPanel = () => {
   const startTidspunkt = formatDate(timestamp, language);
 
   return (
-    <Box borderRadius="xlarge" background="bg-default" padding={"5"}>
-      <div>
+    <Box borderRadius="xlarge" background="bg-default">
+      <div className={styles.titlePadding}>
         <Heading size="small" className={styles.header}>
           {text.heading[language]}
         </Heading>
       </div>
-      <div>
+      <div className={styles.padding}>
         <Dialog language={language} />
       </div>
-      <div>
+      <div className={styles.padding}>
         <Aktivitetsplan language={language} />
       </div>
-      <div className={styles.body}>
-        <BodyShort className={styles.detail}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
+      <div className={styles.bottomPadding}>
+        <BodyShort className={styles.bodyPadding}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
         <ReadMore header={text.readMoreTittel[language]}>{text.readMoreInnhold[language]}</ReadMore>
       </div>
     </Box>

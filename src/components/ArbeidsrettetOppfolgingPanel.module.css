@@ -17,9 +17,7 @@
 }
 
 .header {
-  border-bottom: 1px solid var(--a-border-subtle);
-  background-color: var(--a-surface-default);
-  border-radius: 12px 12px 4px 4px;
+  padding: 5px 5px 5px 15px;
 }
 
 .body {
@@ -44,4 +42,20 @@
   padding: 1rem 1rem 0.75rem 1rem;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
   border-bottom: 1px solid lightgray;
+}
+
+.titlePadding {
+  padding: 15px;
+  border-bottom: 1px solid var(--a-border-subtle);
+}
+.padding {
+  padding: 5px 2px 0px 15px;
+  border-bottom: 1px solid var(--a-border-subtle);
+}
+
+.bodyPadding {
+  padding: 10px 10px 15px 0px;
+}
+.bottomPadding {
+  padding: 15px 15px 15px 25px;
 }

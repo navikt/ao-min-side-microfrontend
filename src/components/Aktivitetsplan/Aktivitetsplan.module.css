@@ -60,9 +60,10 @@
   margin-block-end: var(--a-spacing-2) !important;
 }
 
-.flex {
+.aktivitetsplanPanel {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  padding: 10px;
 }

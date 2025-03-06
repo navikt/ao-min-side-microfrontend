@@ -13,11 +13,11 @@ interface Props {
 const DialogVeileder = ({ language }: Props) => {
   return (
     <a className={styles.container} href={dialogMedVeilederUrl}>
-      <div className={styles.flex}>
+      <div className={styles.dialogPanel}>
         <div>
           <DialogPiktogram />
         </div>
-        <div>
+        <div className={styles.padding}>
           <Heading size="xsmall" className={styles.heading}>
             {text.dialogTittel[language]}
           </Heading>

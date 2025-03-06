@@ -13,7 +13,7 @@ interface Props {
 const Aktivitetsplan = ({ language }: Props) => {
   return (
     <a className={styles.container} href={aktivitetsplanUrl}>
-      <div className={styles.flex}>
+      <div className={styles.aktivitetsplanPanel}>
         <div>
           <AktivitetsplanPiktogram />
         </div>
