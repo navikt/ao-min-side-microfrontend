@@ -12,11 +12,6 @@ export const text = {
     nb: "Arbeidsrettet oppfølging",
     en: "Continued employment guidance",
   },
-  // description: {
-  //   nn: `Nav registrerte deg på arbeidsretta oppfølging ${dato}.`,
-  //   nb: `Nav registrerte deg på arbeidsrettet oppfølging ${dato}.`,
-  //   en: `Nav started you on continued employment guidance ${dato}.`,
-  // },
   readMoreTittel: {
     nn: "Slik brukte me personopplysningane dine",
     nb: "Slik brukte vi personopplysningene dine",
@@ -28,23 +23,23 @@ export const text = {
     en: "When we started you on continued employment guidance, we processed information about your age, address and whether you have legal residence in Norway.  We did this to ensure that you are entitled to guidance, and to ensure that you receive guidance from the correct Nav office. This processing is based on Section 14 a of the Nav Act.",
   },
   dialogTittel: {
-    nn: "",
+    nn: "Dialog med rettleiaren din",
     nb: "Dialog med veilederen din",
-    en: "",
+    en: "Dialogue with your advisor",
   },
   dialogTekst: {
-    nn: "",
-    nb: "Spør f.eks. om avtalte møter og tiltak",
-    en: "",
+    nn: "Spør til dømes om avtalte møter, aktivitetar og tiltak",
+    nb: "Spør for eksempel om avtalte møter, aktiviteter og tiltak",
+    en: "Contact your advisor, for example regarding agreed meetings, activities and measures",
   },
   aktivitetsplanTittel: {
-    nn: "",
+    nn: "Aktivitetsplan",
     nb: "Aktivitetsplan",
-    en: "",
+    en: "Activity plan",
   },
   aktivitetsplanTekst: {
-    nn: "",
+    nn: "Oversikt over dine aktivitetar og tiltak",
     nb: "Oversikt over dine aktiviteter og tiltak",
-    en: "",
+    en: "Overview of the activities you are doing to find work",
   },
 };
