@@ -56,6 +56,9 @@
 .bodyPadding {
   padding: 5px 10px 10px 0px;
 }
-.bottomPadding {
+.infoTekst {
   padding: 10px 15px 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }

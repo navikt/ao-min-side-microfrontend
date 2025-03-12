@@ -1,5 +1,5 @@
 import styles from "./ArbeidsrettetOppfolgingPanel.module.css";
-import { BodyShort, Box, Heading, ReadMore } from "@navikt/ds-react";
+import { BodyShort, Box, Heading, HelpText } from "@navikt/ds-react";
 import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
 import { descriptionText, text } from "../translations/text";
@@ -60,9 +60,11 @@ const ArbeidsrettetOppfolgingPanel = () => {
       <div className={styles.padding}>
         <Aktivitetsplan language={language} />
       </div>
-      <div className={styles.bottomPadding}>
-        <BodyShort className={styles.bodyPadding}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
-        <ReadMore header={text.readMoreTittel[language]}>{text.readMoreInnhold[language]}</ReadMore>
+      <div className={styles.infoTekst}>
+        <BodyShort className={styles.bodyshort}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
+        <HelpText className={styles.helptext} title={text.readMoreTittel[language]}>
+          {text.readMoreInnhold[language]}
+        </HelpText>
       </div>
     </Box>
   );

@@ -1,8 +1,8 @@
 export const descriptionText = (dato: string) => ({
   description: {
-    nn: `Nav registrerte deg på arbeidsretta oppfølging ${dato}.`,
-    nb: `Nav registrerte deg på arbeidsrettet oppfølging ${dato}.`,
-    en: `Nav started you on continued employment guidance ${dato}.`,
+    nn: `Nav registrerte deg på arbeidsretta oppfølging ${dato}`,
+    nb: `Nav registrerte deg på arbeidsrettet oppfølging ${dato}`,
+    en: `Nav started you on continued employment guidance ${dato}`,
   },
 });
 
