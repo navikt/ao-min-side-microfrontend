@@ -4,7 +4,7 @@ import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
 import { headingText, descriptionText, readMoreInnholdText, readMoreTittelText } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
-import { loggBesok } from "../utils/amplitude";
+import { logBesokEvent } from "../utils/amplitude";
 
 function getLocale(language: Language) {
   if (language === "en") {
@@ -39,7 +39,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
   const [timestamp, setTimestamp] = useState<string>("");
 
   useEffect(() => {
-    loggBesok();
+    logBesokEvent();
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode().then((response) => setTimestamp(response));
   }, []);
 

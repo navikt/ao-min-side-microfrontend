@@ -1,7 +1,21 @@
-import { getAmplitudeInstance } from "@navikt/nav-dekoratoren-moduler";
+import { logAmplitudeEvent } from "@navikt/nav-dekoratoren-moduler";
 
-const logger = getAmplitudeInstance("dekoratoren");
-
-//TODO: komponent må fylles ut med et identifiserende navn for microfrontend
-
-export const loggBesok = () => logger("ao-min-side-microfrontend.besok", { komponent: "ao-min-side-microfrontend" });
+export const logBesokEvent = () => {
+  logAmplitudeEvent({
+    origin: "ao-min-side-microfrontend",
+    eventName: "besok",
+    eventData: {
+      komponent: "ao-min-side-microfrontend",
+    },
+  });
+};
+export const logNavigereEvent = (tekst: string) => {
+  logAmplitudeEvent({
+    origin: "ao-min-side-microfrontend",
+    eventName: "navigere",
+    eventData: {
+      komponent: "ao-min-side-microfrontend",
+      tekst: tekst,
+    },
+  });
+};
