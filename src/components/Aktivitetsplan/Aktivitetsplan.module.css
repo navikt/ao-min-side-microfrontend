@@ -11,7 +11,7 @@
 .container:hover {
   cursor: pointer;
   box-shadow: var(--a-shadow-small);
-  .AktivitetsplanPiktogram {
+  svg {
     transition-duration: 0.2s;
     transform: scale(105%);
   }

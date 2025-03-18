@@ -2,14 +2,7 @@ import styles from "./Aktivitetsplan.module.css";
 
 export const AktivitetsplanPiktogram = () => {
   return (
-    <svg
-      className={styles.AktivitetsplanPiktogram}
-      width="56"
-      height="56"
-      viewBox="0 0 56 56"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="48" height="48" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_1_1322)">
         <path
           fill-rule="evenodd"
