@@ -8,7 +8,6 @@ import { logBesokEvent, logNavigereEvent } from "../utils/amplitude";
 import Aktivitetsplan from "./Aktivitetsplan/Aktivitetsplan";
 import Dialog from "./Dialog/Dialog";
 
-
 function getLocale(language: Language) {
   if (language === "en") {
     return "en-US";
@@ -55,12 +54,8 @@ const ArbeidsrettetOppfolgingPanel = () => {
           {text.heading[language]}
         </Heading>
       </div>
-      <div className={styles.lenkePanel}>
-        <Dialog language={language} />
-      </div>
-      <div className={styles.lenkePanel}>
-        <Aktivitetsplan language={language} />
-      </div>
+      <Dialog language={language} />
+      <Aktivitetsplan language={language} />
       <div className={styles.infoTekst}>
         <BodyShort className={styles.bodyshort}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
         <HelpText

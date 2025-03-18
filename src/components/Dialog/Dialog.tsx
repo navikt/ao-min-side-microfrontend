@@ -13,22 +13,24 @@ interface Props {
 
 const DialogVeileder = ({ language }: Props) => {
   return (
-    <a className={styles.container} href={dialogMedVeilederUrl} onClick={() => logNavigereEvent("dialog")}>
-      <div className={styles.dialogPanel}>
-        <div>
-          <DialogPiktogram />
+    <div className={styles.container}>
+      <a href={dialogMedVeilederUrl} onClick={() => logNavigereEvent("dialog")}>
+        <div className={styles.dialogPanel}>
+          <div>
+            <DialogPiktogram />
+          </div>
+          <div className={styles.textContainer}>
+            <Heading size="xsmall" className={styles.heading}>
+              {text.dialogTittel[language]}
+            </Heading>
+            <BodyLong className={styles.detail} size={"small"}>
+              {text.dialogTekst[language]}
+            </BodyLong>
+          </div>
+          <ChevronRightIcon className={styles.chevron} aria-hidden fontSize="24px" />
         </div>
-        <div className={styles.textContainer}>
-          <Heading size="xsmall" className={styles.heading}>
-            {text.dialogTittel[language]}
-          </Heading>
-          <BodyLong className={styles.detail} size={"small"}>
-            {text.dialogTekst[language]}
-          </BodyLong>
-        </div>
-        <ChevronRightIcon className={styles.chevron} aria-hidden fontSize="24px" />
-      </div>
-    </a>
+      </a>
+    </div>
   );
 };
 

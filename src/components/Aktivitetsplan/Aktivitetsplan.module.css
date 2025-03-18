@@ -1,11 +1,15 @@
 .container {
   width: 468px;
-  border-radius: var(--a-border-radius-large);
   background-color: var(--a-surface-default);
-  box-shadow: var(--a-shadow-xsmall);
   width: 100%;
-  color: #272727;
   text-decoration: none;
+  padding: 5px 2px 0px 15px;
+  border-bottom: 1px solid var(--a-border-subtle);
+}
+
+.container a {
+  text-decoration: none;
+  color: var(--a-text-default);
 }
 
 .container:hover {
@@ -19,20 +23,14 @@
     text-decoration: underline;
     text-decoration-thickness: 2px;
   }
-}
-
-.container:hover .chevron {
-  transition-duration: 0.2s;
-  transform: translate(3px, 0);
-}
-
-.container:hover h2 {
-  text-decoration: underline;
+  .chevron {
+    transition-duration: 0.2s;
+    transform: translate(3px, 0);
+  }
 }
 
 .container:focus {
   box-shadow: var(--a-shadow-focus);
-  outline: none;
 }
 
 .chevron {

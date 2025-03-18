@@ -13,22 +13,24 @@ interface Props {
 
 const Aktivitetsplan = ({ language }: Props) => {
   return (
-    <a className={styles.container} href={aktivitetsplanUrl} onClick={() => logNavigereEvent("aktivitetsplan")}>
-      <div className={styles.aktivitetsplanPanel}>
-        <div>
-          <AktivitetsplanPiktogram />
+    <div className={styles.container}>
+      <a href={aktivitetsplanUrl} onClick={() => logNavigereEvent("aktivitetsplan")}>
+        <div className={styles.aktivitetsplanPanel}>
+          <div>
+            <AktivitetsplanPiktogram />
+          </div>
+          <div className={styles.textContainer}>
+            <Heading size="xsmall" className={styles.heading}>
+              {text.aktivitetsplanTittel[language]}
+            </Heading>
+            <BodyLong className={styles.detail} size={"small"}>
+              {text.aktivitetsplanTekst[language]}
+            </BodyLong>
+          </div>
+          <ChevronRightIcon className={styles.chevron} aria-hidden fontSize="24px" />
         </div>
-        <div className={styles.textContainer}>
-          <Heading size="xsmall" className={styles.heading}>
-            {text.aktivitetsplanTittel[language]}
-          </Heading>
-          <BodyLong className={styles.detail} size={"small"}>
-            {text.aktivitetsplanTekst[language]}
-          </BodyLong>
-        </div>
-        <ChevronRightIcon className={styles.chevron} aria-hidden fontSize="24px" />
-      </div>
-    </a>
+      </a>
+    </div>
   );
 };
 
