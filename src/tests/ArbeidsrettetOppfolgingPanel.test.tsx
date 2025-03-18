@@ -9,14 +9,14 @@ describe("Tests for ArbeidsrettetOppfolgingPanel", () => {
     await act(async () => {
       render(<ArbeidsrettetOppfolgingPanel />);
     });
-    expect(screen.getByText("Du har startet på arbeidsrettet oppfølging")).toBeDefined();
+    expect(screen.getByText("Arbeidsrettet oppfølging")).toBeDefined();
   });
 
   it("should have a description", async () => {
     await act(async () => {
       render(<ArbeidsrettetOppfolgingPanel />);
     });
-    expect(screen.getByText(/Nav startet deg på arbeidsrettet oppfølging/)).toBeDefined();
+    expect(screen.getByText(/Nav registrerte deg for arbeidsrettet oppfølging/)).toBeDefined();
   });
 
   it("description should show date", async () => {
@@ -39,17 +39,17 @@ describe("Tests for ArbeidsrettetOppfolgingPanel", () => {
     expect(screen.getByText(/(fant ikke dato)/)).toBeDefined();
   });
 
-  it("should have a read more title", async () => {
+  it("should have dialog title", async () => {
     await act(async () => {
       render(<ArbeidsrettetOppfolgingPanel />);
     });
-    expect(screen.getByText("Slik brukte vi personopplysningene dine")).toBeDefined();
+    expect(screen.getByText(/Dialog med veilederen din/)).toBeDefined();
   });
 
-  it("should have a read more content", async () => {
+  it("should have aktivitetsplan title", async () => {
     await act(async () => {
       render(<ArbeidsrettetOppfolgingPanel />);
     });
-    expect(screen.getByText(/Da vi registrerte deg behandlet vi opplysninger om din alder/)).toBeDefined();
+    expect(screen.getByText(/Aktivitetsplan/)).toBeDefined();
   });
 });
