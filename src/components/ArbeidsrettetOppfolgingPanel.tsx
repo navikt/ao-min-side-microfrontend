@@ -4,7 +4,7 @@ import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
 import { descriptionText, text } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
-import { loggBesok } from "../utils/amplitude";
+import { logEvent, loggBesok } from "../utils/amplitude";
 import Aktivitetsplan from "./Aktivitetsplan/Aktivitetsplan";
 import Dialog from "./Dialog/Dialog";
 
@@ -62,7 +62,11 @@ const ArbeidsrettetOppfolgingPanel = () => {
       </div>
       <div className={styles.infoTekst}>
         <BodyShort className={styles.bodyshort}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
-        <HelpText className={styles.helptext} title={text.readMoreTittel[language]}>
+        <HelpText
+          className={styles.helptext}
+          title={text.readMoreTittel[language]}
+          onClick={() => logEvent("les-mer", "personlig", "Slik brukte vi personopplysningene dine")}
+        >
           {text.readMoreInnhold[language]}
         </HelpText>
       </div>
