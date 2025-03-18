@@ -11,7 +11,14 @@
 .container:hover {
   cursor: pointer;
   box-shadow: var(--a-shadow-small);
-  text-decoration: underline;
+  .DialogPiktogram {
+    transition-duration: 0.2s;
+    transform: scale(105%);
+  }
+  .heading {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
 }
 
 .container:hover .chevron {
