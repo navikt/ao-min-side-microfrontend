@@ -8,6 +8,7 @@ import { logBesokEvent, logNavigereEvent } from "../utils/amplitude";
 import Aktivitetsplan from "./Aktivitetsplan/Aktivitetsplan";
 import Dialog from "./Dialog/Dialog";
 
+
 function getLocale(language: Language) {
   if (language === "en") {
     return "en-US";
