@@ -16,7 +16,7 @@ export const logNavigereEvent = (tekst: string) => {
     eventName: "navigere",
     eventData: {
       komponent: "ao-min-side-microfrontend",
-      data: { tekst: tekst },
+      tekst: tekst,
     },
   });
 };
