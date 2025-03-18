@@ -3,7 +3,7 @@ import { logAmplitudeEvent } from "@navikt/nav-dekoratoren-moduler";
 export const logBesokEvent = () => {
   logAmplitudeEvent({
     origin: "ao-min-side-microfrontend",
-    eventName: "besok",
+    eventName: "besøk",
     eventData: {
       komponent: "ao-min-side-microfrontend",
     },
