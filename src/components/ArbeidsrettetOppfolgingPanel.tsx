@@ -54,15 +54,16 @@ const ArbeidsrettetOppfolgingPanel = () => {
           {text.heading[language]}
         </Heading>
       </div>
-      <div className={styles.padding}>
+      <div className={styles.lenkePanel}>
         <Dialog language={language} />
       </div>
-      <div className={styles.padding}>
+      <div className={styles.lenkePanel}>
         <Aktivitetsplan language={language} />
       </div>
       <div className={styles.infoTekst}>
         <BodyShort className={styles.bodyshort}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
         <HelpText
+          placement={"left"}
           className={styles.helptext}
           title={text.readMoreTittel[language]}
           onClick={() => logNavigereEvent("Slik brukte vi personopplysningene dine")}
