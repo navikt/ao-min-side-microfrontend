@@ -58,7 +58,16 @@
 }
 .infoTekst {
   padding: 10px 15px 15px 20px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*gap: 4px;*/
+}
+
+.bodyshort,
+.helptext {
+  display: inline-block;
+}
+
+.helptext {
+  float: left;
 }

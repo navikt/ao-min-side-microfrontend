@@ -5,7 +5,7 @@ import { Language } from "../../language/LanguageProvider";
 import { dialogMedVeilederUrl } from "../../utils/urls";
 import { text } from "../../translations/text";
 import { DialogPiktogram } from "./DialogPiktogram";
-import { logEvent } from "../../utils/amplitude";
+import { logNavigereEvent } from "../../utils/amplitude";
 
 interface Props {
   language: Language;
@@ -13,11 +13,7 @@ interface Props {
 
 const DialogVeileder = ({ language }: Props) => {
   return (
-    <a
-      className={styles.container}
-      href={dialogMedVeilederUrl}
-      onClick={() => logEvent("dialog-veileder", "personlig", "Dialog med veilederen din")}
-    >
+    <a className={styles.container} href={dialogMedVeilederUrl} onClick={() => logNavigereEvent("dialog")}>
       <div className={styles.dialogPanel}>
         <div>
           <DialogPiktogram />
