@@ -28,6 +28,7 @@ spec:
     enabled: true
     sidecar:
       enabled: true
+      level: "idporten-loa-substantial"
   tokenx:
     enabled: true
   observability:

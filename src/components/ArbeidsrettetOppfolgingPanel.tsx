@@ -21,7 +21,7 @@ const formatDate = (timestamp: string, language: Language): string => {
   const date = new Date(cleanedTimestamp);
 
   if (isNaN(date.getTime())) {
-    return "(fant ikke dato)";
+    return "";
   }
 
   const formatter = new Intl.DateTimeFormat(getLocale(language), {
@@ -45,8 +45,6 @@ const ArbeidsrettetOppfolgingPanel = () => {
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode().then((response) => setTimestamp(response));
   }, []);
 
-  const startTidspunkt = formatDate(timestamp, language);
-
   return (
     <Box borderRadius="xlarge" background="bg-default">
       <div className={styles.titlePadding}>
@@ -57,7 +55,9 @@ const ArbeidsrettetOppfolgingPanel = () => {
       <Dialog language={language} />
       <Aktivitetsplan language={language} />
       <div className={styles.infoTekst}>
-        <BodyShort className={styles.bodyshort}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
+        <BodyShort className={styles.bodyshort}>
+          {descriptionText(formatDate(timestamp, language)).description[language]}
+        </BodyShort>
         <HelpText
           placement={"left"}
           className={styles.helptext}
