@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
     paths:
-      - '.github/workflows/poao-frontend-deploy-prod.yml'
+      - '.github/workflows/poao-frontend-deploy-prod.yaml'
       - '.nais/nais-prod.yaml'
   workflow_dispatch:
 
