@@ -2,7 +2,7 @@ import "@navikt/ds-css";
 import ArbeidsrettetOppfolgingPanel from "./components/ArbeidsrettetOppfolgingPanel";
 import { useEffect } from "react";
 import { loadUmami } from "./utils/umamiTracker";
-import { isDevEnvironment } from "./utils/envUtil";
+import { isDevEnvironment } from "./utils/environment";
 
 function App() {
   useEffect(() => {

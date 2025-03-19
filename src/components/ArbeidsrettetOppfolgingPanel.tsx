@@ -1,10 +1,12 @@
 import styles from "./ArbeidsrettetOppfolgingPanel.module.css";
-import { BodyShort, Heading, ReadMore } from "@navikt/ds-react";
+import { BodyShort, Box, Heading, HelpText } from "@navikt/ds-react";
 import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
-import { headingText, descriptionText, readMoreInnholdText, readMoreTittelText } from "../translations/text";
+import { descriptionText, text } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
-import { logBesokEvent } from "../utils/amplitude";
+import { logBesokEvent, logNavigereEvent } from "../utils/amplitude";
+import Aktivitetsplan from "./Aktivitetsplan/Aktivitetsplan";
+import Dialog from "./Dialog/Dialog";
 
 function getLocale(language: Language) {
   if (language === "en") {
@@ -46,19 +48,26 @@ const ArbeidsrettetOppfolgingPanel = () => {
   const startTidspunkt = formatDate(timestamp, language);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <Heading size="small" className={styles.heading}>
-          {headingText().heading[language]}
+    <Box borderRadius="xlarge" background="bg-default">
+      <div className={styles.titlePadding}>
+        <Heading size="small" className={styles.header}>
+          {text.heading[language]}
         </Heading>
       </div>
-      <div className={styles.body}>
-        <BodyShort className={styles.detail}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
-        <ReadMore header={readMoreTittelText().readMoreTittel[language]}>
-          {readMoreInnholdText().readMoreInnhold[language]}
-        </ReadMore>
+      <Dialog language={language} />
+      <Aktivitetsplan language={language} />
+      <div className={styles.infoTekst}>
+        <BodyShort className={styles.bodyshort}>{descriptionText(startTidspunkt).description[language]}</BodyShort>
+        <HelpText
+          placement={"left"}
+          className={styles.helptext}
+          title={text.readMoreTittel[language]}
+          onClick={() => logNavigereEvent("Slik brukte vi personopplysningene dine")}
+        >
+          {text.readMoreInnhold[language]}
+        </HelpText>
       </div>
-    </div>
+    </Box>
   );
 };
 
