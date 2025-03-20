@@ -33,7 +33,7 @@ const formatDate = (timestamp: string, language: Language): string => {
     minute: "2-digit",
   });
 
-  return formatter.format(date);
+  return " " + formatter.format(date);
 };
 
 const ArbeidsrettetOppfolgingPanel = () => {

@@ -1,14 +1,8 @@
 export const descriptionText = (dato: string) => ({
   description: {
-    nb: `Nav registrerte deg for arbeidsrettet oppfølging${
-      dato.length > 0 ? " " + dato : dato
-    }. For å kunne registrere deg måtte vi behandle personopplysningene dine.`,
-    nn: `Nav registrerte deg for arbeidsretta oppfølging${
-      dato.length > 0 ? " " + dato : dato
-    }. For å kunna registrera deg måtte me behandla personopplysningane dine.`,
-    en: `Nav registered you for continued employment guidance${
-      dato.length > 0 ? " " + dato : dato
-    }. In order to register you, we had to process your personal data.`,
+    nb: `Nav registrerte deg for arbeidsrettet oppfølging${dato}. For å kunne registrere deg måtte vi behandle personopplysningene dine.`,
+    nn: `Nav registrerte deg for arbeidsretta oppfølging${dato}. For å kunna registrera deg måtte me behandla personopplysningane dine.`,
+    en: `Nav registered you for continued employment guidance${dato}. In order to register you, we had to process your personal data.`,
   },
 });
 
