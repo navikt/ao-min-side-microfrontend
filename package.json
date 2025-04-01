@@ -35,13 +35,13 @@
     "eslint-plugin-react": "7.33.2",
     "husky": "8.0.3",
     "jsdom": "23.2.0",
-    "lint-staged": "^15.4.3",
+    "lint-staged": "^15.5.0",
     "prettier": "3.1.1",
     "rollup-plugin-import-map": "3.0.0",
     "typescript": "5.3.3",
-    "vite": "^6.2.3",
+    "vite": "^6.2.4",
     "vite-plugin-css-injected-by-js": "3.3.1",
-    "vitest": "^3.0.7"
+    "vitest": "^3.1.1"
   },
   "prettier": {
     "printWidth": 120

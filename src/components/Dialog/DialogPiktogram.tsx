@@ -1,14 +1,14 @@
 export const DialogPiktogram = () => {
   return (
     <svg width="48" height="48" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_1_1316)">
+      <g clipPath="url(#clip0_1_1316)">
         <ellipse cx="28.0003" cy="28" rx="8.35088" ry="8.16667" fill="#CCE2F0" />
         <ellipse cx="8.35088" cy="28" rx="8.35088" ry="8.16667" fill="#CCE2F0" />
         <ellipse cx="47.6487" cy="28" rx="8.35088" ry="8.16667" fill="#CCE2F0" />
         <mask id="path-4-inside-1_1_1316" fill="white">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M24.7917 26.25C27.4471 26.25 29.615 28.3374 29.7439 30.9609L29.75 31.2083V44.8438C29.75 47.4992 27.6626 49.6671 25.0391 49.796L24.7917 49.8021H8.67708L0 56V31.2083C0 28.5529 2.08742 26.385 4.71086 26.2561L4.95833 26.25H24.7917Z"
           />
         </mask>
@@ -19,8 +19,8 @@ export const DialogPiktogram = () => {
         />
         <mask id="path-6-inside-2_1_1316" fill="white">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M35.5833 0C33.3965 0 31.6112 1.71905 31.505 3.87953L31.5 4.08333V15.3125C31.5 17.4993 33.2191 19.2846 35.3795 19.3908L35.5833 19.3958H48.8542L56 24.5V4.08333C56 1.89651 54.2809 0.11119 52.1205 0.00499729L51.9167 0H35.5833Z"
           />
         </mask>
