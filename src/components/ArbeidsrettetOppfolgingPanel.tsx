@@ -60,6 +60,7 @@ const ArbeidsrettetOppfolgingPanel = () => {
         </BodyShort>
         <HelpText
           placement={"left"}
+          strategy={"fixed"}
           className={styles.helptext}
           title={text.readMoreTittel[language]}
           onClick={() => logNavigereEvent("Slik brukte vi personopplysningene dine")}
