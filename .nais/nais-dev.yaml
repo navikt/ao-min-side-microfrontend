@@ -6,7 +6,7 @@ metadata:
   labels:
     team: dab
 spec:
-  image: europe-north1-docker.pkg.dev/nais-management-233d/poao/poao-frontend:2025.01.10_07.58-0f9a46dccc10
+  image: europe-north1-docker.pkg.dev/nais-management-233d/poao/poao-frontend:2025.08.01_12.39-91884ad95c08
   port: 8080
   ingresses:
     - https://ao-min-side-microfrontend.intern.dev.nav.no
