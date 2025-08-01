@@ -33,11 +33,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
-      - name: "Prune dependencies"
-        run: "npm prune --omit=dev"
-
       - name: "Build application"
         run: "npm run build"
+
+      - name: "Prune dependencies"
+        run: "npm prune --omit=dev"
 
       - id: cdn-upload
         uses: nais/deploy/actions/cdn-upload/v2@master
