@@ -33,9 +33,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
-      - name: "Prune dependencies"
-        run: "npm prune --omit=dev"
-
       - name: "Build application"
         run: "npm run build"
 
