@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "prepare": "husky install",
+    "prepare-husky": "husky install",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx ."
   },
   "dependencies": {
