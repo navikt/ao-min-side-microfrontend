@@ -41,7 +41,7 @@
     "typescript": "5.3.3",
     "vite": "6.3.4",
     "vite-plugin-css-injected-by-js": "3.3.1",
-    "vitest": "^3.1.4"
+    "vitest": "3.2.4"
   },
   "prettier": {
     "printWidth": 120
