@@ -7,6 +7,7 @@ import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
 import { logBesokEvent, logNavigereEvent } from "../utils/amplitude";
 import Aktivitetsplan from "./Aktivitetsplan/Aktivitetsplan";
 import Dialog from "./Dialog/Dialog";
+import { trackHelpTextClicked } from "../utils/umamiTracker";
 
 function getLocale(language: Language) {
   if (language === "en") {
