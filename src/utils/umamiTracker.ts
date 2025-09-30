@@ -10,6 +10,16 @@ declare global {
     }
 }
 
+export const trackHelpTextClicked = (name: string) => {
+  if (!window.umami) {
+    console.warn('Umami is not initialized. Ignoring');
+    return;
+  }
+  window.umami.track('helptext klikket', {
+    tittel: name
+  });
+};
+
 export function loadUmami(): Promise<void> {
   return new Promise((resolve, reject) => {
     if (window.umami) {
