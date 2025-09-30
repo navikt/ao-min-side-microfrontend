@@ -63,7 +63,10 @@ const ArbeidsrettetOppfolgingPanel = () => {
           strategy={"fixed"}
           className={styles.helptext}
           title={text.readMoreTittel[language]}
-          onClick={() => logNavigereEvent("Slik brukte vi personopplysningene dine")}
+          onClick={() => {
+            logNavigereEvent("Slik brukte vi personopplysningene dine");
+            trackHelpTextClicked("Slik brukte vi personopplysningene dine");
+          }}
         >
           {text.readMoreInnhold[language]}
         </HelpText>
