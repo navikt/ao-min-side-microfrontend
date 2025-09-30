@@ -1,3 +1,15 @@
+interface Umami {
+    track(payload: unknown): void;
+    track(event_name: string, payload: unknown): void;
+    identify(session_data: unknown): void;
+}
+
+declare global {
+    interface Window {
+        umami?: Umami;
+    }
+}
+
 export function loadUmami(): Promise<void> {
   return new Promise((resolve, reject) => {
     if (window.umami) {
