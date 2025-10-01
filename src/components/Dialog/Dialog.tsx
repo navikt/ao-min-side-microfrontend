@@ -6,6 +6,7 @@ import { dialogMedVeilederUrl } from "../../utils/urls";
 import { text } from "../../translations/text";
 import { DialogPiktogram } from "./DialogPiktogram";
 import { logNavigereEvent } from "../../utils/amplitude";
+import { trackLinkClicked } from "../../utils/umamiTracker";
 
 interface Props {
   language: Language;
@@ -14,7 +15,10 @@ interface Props {
 const DialogVeileder = ({ language }: Props) => {
   return (
     <div className={styles.container}>
-      <a href={dialogMedVeilederUrl} onClick={() => logNavigereEvent("dialog")}>
+      <a href={dialogMedVeilederUrl} onClick={() => {
+        logNavigereEvent("dialog")
+        trackLinkClicked(text.dialogTittel[language], dialogMedVeilederUrl);
+      }}>
         <div className={styles.dialogPanel}>
           <div>
             <DialogPiktogram />

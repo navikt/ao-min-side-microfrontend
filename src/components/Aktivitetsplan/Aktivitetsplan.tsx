@@ -6,6 +6,7 @@ import { aktivitetsplanUrl } from "../../utils/urls";
 import { text } from "../../translations/text";
 import { AktivitetsplanPiktogram } from "./AktivitetsplanPiktogram";
 import { logNavigereEvent } from "../../utils/amplitude";
+import { trackLinkClicked } from "../../utils/umamiTracker";
 
 interface Props {
   language: Language;
@@ -14,7 +15,11 @@ interface Props {
 const Aktivitetsplan = ({ language }: Props) => {
   return (
     <div className={styles.container}>
-      <a href={aktivitetsplanUrl} onClick={() => logNavigereEvent("aktivitetsplan")}>
+      <a href={aktivitetsplanUrl} onClick={() => {
+        logNavigereEvent("aktivitetsplan")
+        trackLinkClicked(text.aktivitetsplanTittel[language], aktivitetsplanUrl)
+      }
+      }>
         <div className={styles.aktivitetsplanPanel}>
           <div>
             <AktivitetsplanPiktogram />

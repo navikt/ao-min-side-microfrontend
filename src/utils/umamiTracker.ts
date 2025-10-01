@@ -16,9 +16,20 @@ export const trackHelpTextClicked = (name: string) => {
     return;
   }
   window.umami.track('helptext klikket', {
-    tittel: name
+    tekst: name
   });
 };
+
+export const trackLinkClicked = (name: string, url: string) => {
+  if (!window.umami) {
+    console.warn('Umami is not initialized. Ignoring');
+    return;
+  }
+  window.umami.track('lenke klikket', {
+    tekst: name,
+    url: url
+  });
+}
 
 export function loadUmami(): Promise<void> {
   return new Promise((resolve, reject) => {
