@@ -15,7 +15,7 @@ export const trackHelpTextClicked = (name: string) => {
     console.warn('Umami is not initialized. Ignoring');
     return;
   }
-  window.umami.track('helptext klikket', {
+  window.umami.track('dialogboks åpnet', {
     tekst: name
   });
 };
@@ -25,7 +25,7 @@ export const trackLinkClicked = (name: string, url: string) => {
     console.warn('Umami is not initialized. Ignoring');
     return;
   }
-  window.umami.track('lenke klikket', {
+  window.umami.track('navigasjon klikket', {
     tekst: name,
     url: url
   });
