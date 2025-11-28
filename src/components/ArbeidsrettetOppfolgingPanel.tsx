@@ -4,7 +4,6 @@ import { Language, LanguageContext } from "../language/LanguageProvider";
 import { useContext, useEffect, useState } from "react";
 import { descriptionText, text } from "../translations/text";
 import { VeilarboppfolgingApi } from "../api/veilarboppfolging";
-import { logBesokEvent, logNavigereEvent } from "../utils/amplitude";
 import Aktivitetsplan from "./Aktivitetsplan/Aktivitetsplan";
 import Dialog from "./Dialog/Dialog";
 
@@ -41,7 +40,6 @@ const ArbeidsrettetOppfolgingPanel = () => {
   const [timestamp, setTimestamp] = useState<string>("");
 
   useEffect(() => {
-    logBesokEvent();
     VeilarboppfolgingApi.hentGjeldendeOppfolgingsperiode().then((response) => setTimestamp(response));
   }, []);
 
@@ -63,7 +61,6 @@ const ArbeidsrettetOppfolgingPanel = () => {
           strategy={"fixed"}
           className={styles.helptext}
           title={text.readMoreTittel[language]}
-          onClick={() => logNavigereEvent("Slik brukte vi personopplysningene dine")}
         >
           {text.readMoreInnhold[language]}
         </HelpText>

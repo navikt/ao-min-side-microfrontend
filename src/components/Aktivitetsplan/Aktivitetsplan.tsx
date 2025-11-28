@@ -5,7 +5,6 @@ import { Language } from "../../language/LanguageProvider";
 import { aktivitetsplanUrl } from "../../utils/urls";
 import { text } from "../../translations/text";
 import { AktivitetsplanPiktogram } from "./AktivitetsplanPiktogram";
-import { logNavigereEvent } from "../../utils/amplitude";
 
 interface Props {
   language: Language;
@@ -14,7 +13,7 @@ interface Props {
 const Aktivitetsplan = ({ language }: Props) => {
   return (
     <div className={styles.container}>
-      <a href={aktivitetsplanUrl} onClick={() => logNavigereEvent("aktivitetsplan")}>
+      <a href={aktivitetsplanUrl}>
         <div className={styles.aktivitetsplanPanel}>
           <div>
             <AktivitetsplanPiktogram />
